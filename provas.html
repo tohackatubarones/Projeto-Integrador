@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provas</title>
+</head>
+<body>
+    <h1>Bem-vindo <?php echo isset($_GET['username']) ? htmlspecialchars($_GET['username']) : ''; ?></h1>
+
+    <h2>Escolha a matéria:</h2>
+    <form action="gerar_prova.php" method="post">
+        <label for="materia">Selecione a matéria:</label>
+        <select name="materia" id="materia">
+            <option value="portugues">Português</option>
+            <option value="matematica">Matemática</option>
+        </select>
+        <br>
+        <label for="numero_questoes">Número de questões (entre 5 e 50):</label>
+        <input type="number" name="numero_questoes" id="numero_questoes" min="5" max="50" value="5">
+        <br>
+        <input type="submit" value="Gerar Prova">
+    </form>
+</body>
+</html>

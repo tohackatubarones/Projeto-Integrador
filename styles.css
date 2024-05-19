@@ -1,0 +1,22 @@
+/* Estilo dos botões */
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-signup,
+.btn-login {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Cor de fundo dos botões */
+    color: #fff; /* Cor do texto dos botões */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-signup:hover,
+.btn-login:hover {
+    background-color: #0056b3; /* Cor de fundo dos botões ao passar o mouse */
+}

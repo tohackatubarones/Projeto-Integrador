@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Questões</title>
+    <style>
+        /* Adiciona margem entre os botões */
+        button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastrar Questões</h1>
+
+    <form action="processar_questao.php" method="post" id="questaoForm">
+        <label for="materia">Matéria:</label>
+        <select id="materia" name="materia" required>
+            <option value="portugues">Português</option>
+            <option value="matematica">Matemática</option>
+        </select><br><br>
+
+        <label for="enunciado">Enunciado:</label><br>
+        <textarea id="enunciado" name="enunciado" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="alternativa_a">Alternativa A:</label>
+        <input type="text" id="alternativa_a" name="alternativa_a" required><br><br>
+
+        <label for="alternativa_b">Alternativa B:</label>
+        <input type="text" id="alternativa_b" name="alternativa_b" required><br><br>
+
+        <label for="alternativa_c">Alternativa C:</label>
+        <input type="text" id="alternativa_c" name="alternativa_c" required><br><br>
+
+        <label for="alternativa_d">Alternativa D:</label>
+        <input type="text" id="alternativa_d" name="alternativa_d" required><br><br>
+
+        <label for="alternativa_e">Alternativa E:</label>
+        <input type="text" id="alternativa_e" name="alternativa_e" required><br><br>
+
+        <label for="alternativa_correta">Alternativa Correta:</label>
+        <select id="alternativa_correta" name="alternativa_correta" required>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+            <option value="e">E</option>
+        </select><br><br>
+
+        <input type="submit" value="Cadastrar Questão">
+    </form>
+
+    <!-- Div para envolver os botões e aplicar a margem vertical -->
+    <div>
+        <!-- Botões para redirecionamento -->
+        <button onclick="window.location.href='provas.html'">Gerador de Provas</button>
+        <button onclick="window.location.href='perfil.html'">Perfil</button>
+    </div>
+
+    <!-- Script JavaScript para exibir o popup -->
+    <script>
+        // Verifica se a query string contém o parâmetro "success" indicando que a questão foi cadastrada com sucesso
+        const urlParams = new URLSearchParams(window.location.search);
+        const successParam = urlParams.get('success');
+
+        // Se o parâmetro "success" for verdadeiro, exibe o popup
+        if (successParam === 'true') {
+            alert("Questão cadastrada com sucesso!");
+        }
+    </script>
+</body>
+</html>
